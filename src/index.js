@@ -1,5 +1,6 @@
 const BankAccount = require("./BankAccount");
 const NewOperation = require("./NewOperation");
+const TableEntry = require("./TableEntry.js");
 
 console.log("-------new BankAccount----");
 let newbanckacc = new BankAccount();

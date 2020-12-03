@@ -32,11 +32,22 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
-### Acceptance criteria
-
-- test framework used: npm install --save-dev jest
-- npm install
-
 ## Self-assessment
 
 Once you have completed the challenge and feel happy with your solution, here's a form to help you reflect on the quality of your code: https://docs.google.com/forms/d/1Q-NnqVObbGLDHxlvbUfeAC7yBCf3eCjTmz6GOqC9Aeo/edit
+
+### Solution design:
+
+- The way that the solution was structured is the following:
+  - The problem needed the creation of new operations that can be stored in an array with its variables (operationType(debit/credit), amount, day).
+  - Each of the operation have to follow a TableEntry format and in order to do that the problem needed the creation of a class.
+  - Finally, the information stored needs to be print out. Following that logic, and Statement class object was added.
+- In the BankAccount class the code has two dependencies TableEntry and Statement. I thought that was reduntant running tests over the TableEntry class as I am already testing that in the bankaccount tests.
+
+### How to install and run code and tests:
+
+- test framework used: npm install --save-dev jest
+  - test coverage: jest --coverage --coverageDirectory=output/coverage/jest
+  - to run the tests => npm test
+- npm install
+- repl node
