@@ -5,10 +5,12 @@ describe("BankAccount", function () {
   let bankaccountvar;
   let o1;
   let o2;
+  let o3;
   beforeEach(function () {
     bankaccountvar = new BankAccount();
     o1 = new NewOperation("deposit", 2000, "10/12/2019");
     o2 = new NewOperation("debit", 400, "11/12/2019");
+    o3 = new NewOperation("debit", 2100, "14/12/2019");
   });
 
   it("printStatement", function () {
