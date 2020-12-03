@@ -18,4 +18,9 @@ describe("BankAccount", function () {
       "10/12/2019" && "11/12/2019"
     );
   });
+
+  it("balance changed after a deposit and withdraw", function () {
+    bankaccountvar.addRecord(o1);
+    expect(bankaccountvar.printStatament()).toContain(2000);
+  });
 });
