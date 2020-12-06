@@ -5,6 +5,7 @@ class TableEntry {
     this.debit = this.formatAmount(debit);
     this.balance = this.formatAmount(balance);
   }
+
   formatDate(dateinput) {
     let dateParts = dateinput.split("/");
     let inputDate = new Date(+dateParts[2], +dateParts[1] - 1, +dateParts[0]);
@@ -16,6 +17,7 @@ class TableEntry {
       inputDate.getFullYear()
     );
   }
+
   formatAmount(n) {
     return "" + (n === 0 || n === "" ? "" : Number(n).toFixed(2));
   }

@@ -3,6 +3,7 @@ class Statement {
     this.tableEntries = tableEntries;
     this.header = "date || credit || debit || balance";
   }
+
   report() {
     let transaction = "";
     this.tableEntries.forEach((element) => {

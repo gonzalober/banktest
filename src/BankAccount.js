@@ -4,8 +4,14 @@ class BankAccount {
   constructor() {
     this.operations = [];
   }
-  //entry of new lines
+
   addRecord(operation) {
+    if (
+      operation["operationType"] !== "credit" &&
+      operation["operationType"] !== "debit"
+    ) {
+      throw new Error("OperationType must be deposit or debit");
+    }
     this.operations.push(operation);
     this.operations.sort(function (a, b) {
       let datePartsA = a["day"].split("/");
@@ -23,13 +29,14 @@ class BankAccount {
       return inputDateA - inputDateB;
     });
   }
+
   printStatament() {
     let resultStatement = [];
     let balance = 0;
     this.operations.forEach(function (operation) {
       let date = operation["day"];
       let credit =
-        operation["operationType"] === "deposit" ? operation["amount"] : 0;
+        operation["operationType"] === "credit" ? operation["amount"] : 0;
       let debit =
         operation["operationType"] === "debit" ? operation["amount"] : 0;
       balance =
